@@ -14,7 +14,16 @@ namespace Expendedora
         private double _dinero;
         private bool _encendida;
 
-        public void AgregarLata()
+        
+
+        public Expendedora()
+        {
+            this._latas = new List<Lata>();
+        }
+
+        
+
+        public void AgregarLata(Lata l)
         {
 
         }
@@ -23,23 +32,24 @@ namespace Expendedora
 
         public string GetBalance()
         {
-
+            return _dinero.ToString();
         }
 
         public int GetCapacidadRestante()
         {
-            
+            return _capacidad;
         }
         
         public void EncenderMaquina()
         {
-
+            Console.WriteLine("Máquina Encendida!");
+            Console.ReadKey();
         }
         
-        public bool EstaVacía()
-        {
+        //public bool EstaVacía()
+        //{
 
-        }
+        //}
 
 
 

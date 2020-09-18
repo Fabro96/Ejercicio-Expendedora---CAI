@@ -1,0 +1,7 @@
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\obj\Debug\Expendedora.csprojAssemblyReference.cache
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\obj\Debug\Expendedora.csproj.CoreCompileInputs.cache
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\bin\Debug\Expendedora.exe.config
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\bin\Debug\Expendedora.exe
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\bin\Debug\Expendedora.pdb
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\obj\Debug\Expendedora.exe
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\Ejercicio-Expendedora---CAI\Expendedora\Expendedora\obj\Debug\Expendedora.pdb

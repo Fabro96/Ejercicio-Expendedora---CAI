@@ -15,6 +15,24 @@ namespace Expendedora
             Console.WriteLine("BIENVENIDO A LA EXPENDEDORA!");
             Console.ReadKey();
 
+            Expendedora Exp1 = new Expendedora();
+            List<Lata> listaLatas = new List<Lata>();
+
+            Lata CO1 = new Lata("CO1", "Coca Cola", "Regular");
+            listaLatas.Add(CO1);
+            Lata CO2 = new Lata("CO2", "Coca Cola", "Zero");
+            listaLatas.Add(CO2);
+            Lata SP1 = new Lata("SP1", "Sprite", "Regular");
+            listaLatas.Add(SP1);
+            Lata SP2 = new Lata("SP2", "Sprite", "Zero");
+            listaLatas.Add(SP2);
+            Lata FA1 = new Lata("FA1", "Fanta", "Regular");
+            listaLatas.Add(FA1);
+            Lata FA2 = new Lata("FA2", "Fanta", "Zero");
+            listaLatas.Add(FA2);
+
+
+
             //MENÚ
             do
             {
@@ -34,10 +52,15 @@ namespace Expendedora
                 switch (opcion)
                 {
                     case 0:
-                        //Método EncenderMaquina(): void
+                        Exp1.EncenderMaquina();
                         break;
                     case 1:
-                        //Método MostrarStock(Expendedora): void 
+                        foreach (Lata lata in listaLatas)
+                        {
+                            Console.WriteLine(lata.ToString());
+
+                        }
+                        Console.ReadKey();
                         break;
                     case 2:
                         //Método IngresarLata(Expendedora): void
@@ -49,25 +72,37 @@ namespace Expendedora
                         //Método ObtenerBalance(Expendedora): void
                         break;
                     case 5:
-                        //Método MostrarStock(Expendedora): void
-                        break;
+                        //MostrarStock();
+                        
+                            break;
                     default:
                         //Opción Inválida
                         break;
                 }
 
-            } while (opcion != 0);
+            } while (opcion != 6);
             
+        }
+        //IngresarLata
+        public static void IngresarLata(Expendedora e)
+        {
 
+        }
+        //ExtraerLata
 
+        public static void ExtraerLata(Expendedora e)
+        {
+
+        }
+        //ObtenerBalance
+        public static void ObtenerBalance(Expendedora e)
+        {
+
+        }
+        //MostrarStock
+        public static void MostrarStock(Expendedora e)
+        {
             
-            //IngresarLata
-            //ExtraerLata
-            //ObtenerBalance
-            //MostrarStock
-
-
-
         }
     }
 }
