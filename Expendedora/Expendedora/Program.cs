@@ -33,7 +33,6 @@ namespace Expendedora
             listaLatas.Add(FA2);
 
 
-
             //MENÚ
             do
             {
@@ -75,14 +74,15 @@ namespace Expendedora
                     case 5:
                         //MostrarStock();
                         
-                            break;
+                        break;
                     default:
                         //Opción Inválida
                         break;
                 }
 
             } while (opcion < 6);
-            
+            Console.ReadKey();
+
         }
         //IngresarLata
         public static void IngresarLata(Expendedora e)
@@ -105,5 +105,6 @@ namespace Expendedora
         {
             
         }
+        
     }
 }

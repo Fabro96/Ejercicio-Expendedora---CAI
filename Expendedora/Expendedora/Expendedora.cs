@@ -14,16 +14,24 @@ namespace Expendedora
         private double _dinero;
         private bool _encendida;
 
-        
-
-        
 
         public Expendedora()
         {
             this._latas = new List<Lata>();
         }
 
-        
+        public string Proveedor
+        {
+            get { return _proveedor; }
+            set { _proveedor = value; }
+        }
+
+        public int Capacidad
+        {
+            get { return _capacidad; }
+            set { _capacidad = value; }
+        }
+
 
         public void AgregarLata(Lata l)
         {

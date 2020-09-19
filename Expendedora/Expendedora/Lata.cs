@@ -22,7 +22,38 @@ namespace Expendedora
 
         }
 
-        
+        public string Codigo
+        {
+            get { return _codigo; }
+            set { _codigo = value; }
+        }
+
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        public string Sabor
+        {
+            get { return _sabor; }
+            set { _sabor = value; }
+        }
+
+        public double Precio
+        {
+            get { return _precio; }
+            set { _precio = value; }
+        }
+
+        public double Volumen
+        {
+            get { return _volumen; }
+            set { _volumen = value; }
+        }
+
+
+
 
         public double GetPrecioPorLitro()
         {
@@ -31,17 +62,17 @@ namespace Expendedora
 
         //public override string ToString()
         //{
-        //    return string.Format("{nombre} - {sabor} $ {precio} / $/L {precio por litro}", this._nombre, this._sabor);
+        //    return string.Format("{0} - {1} $ {2} / $/L {3}", this._nombre, this._sabor);
         //}
         public override string ToString()
         {
             return string.Format("{0} - {1} - {2}", this._codigo, this._nombre, this._sabor);
         }
 
-        public string Codigos()
-        {
-            return string.Format("{0}", this._codigo);
-        }
+        //public string Codigos()
+        //{
+        //    return string.Format("{0}", this._codigo);
+        //}
 
 
     }
