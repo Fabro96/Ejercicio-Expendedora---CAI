@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Expendedora
 {
-    class Expendedora
+    public class Expendedora
     {
         private List<Lata> _latas;
         private string _proveedor;
         private int _capacidad;
         private double _dinero;
         private bool _encendida;
+
+        
 
         
 

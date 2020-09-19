@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Expendedora
 {
-    class Lata
+    public class Lata
     {
         private string _codigo;
         private string _nombre;
@@ -22,6 +22,8 @@ namespace Expendedora
 
         }
 
+        
+
         public double GetPrecioPorLitro()
         {
             return _precio;
@@ -34,6 +36,11 @@ namespace Expendedora
         public override string ToString()
         {
             return string.Format("{0} - {1} - {2}", this._codigo, this._nombre, this._sabor);
+        }
+
+        public string Codigos()
+        {
+            return string.Format("{0}", this._codigo);
         }
 
 

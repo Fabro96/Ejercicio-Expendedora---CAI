@@ -16,6 +16,7 @@ namespace Expendedora
             Console.ReadKey();
 
             Expendedora Exp1 = new Expendedora();
+
             List<Lata> listaLatas = new List<Lata>();
 
             Lata CO1 = new Lata("CO1", "Coca Cola", "Regular");
@@ -80,13 +81,13 @@ namespace Expendedora
                         break;
                 }
 
-            } while (opcion != 6);
+            } while (opcion < 6);
             
         }
         //IngresarLata
         public static void IngresarLata(Expendedora e)
         {
-
+           
         }
         //ExtraerLata
 
