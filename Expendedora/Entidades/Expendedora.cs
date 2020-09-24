@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expendedora
+namespace Entidades
 {
     public class Expendedora
     {
@@ -49,20 +49,17 @@ namespace Expendedora
         {
             return _capacidad;
         }
-        
+
         public void EncenderMaquina()
         {
             Console.WriteLine("Máquina Encendida!");
             Console.ReadKey();
         }
-        
+
         //public bool EstaVacía()
         //{
 
         //}
-
-
-
 
     }
 }

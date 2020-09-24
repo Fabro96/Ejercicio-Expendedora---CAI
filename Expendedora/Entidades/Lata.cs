@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expendedora
+namespace Entidades
 {
     public class Lata
     {
@@ -73,7 +73,5 @@ namespace Expendedora
         //{
         //    return string.Format("{0}", this._codigo);
         //}
-
-
     }
 }
