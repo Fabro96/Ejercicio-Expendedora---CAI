@@ -26,14 +26,21 @@ namespace Expendedora
 
         }
 
-        //public static int ValidarOpcion(int min, int max, string mensaje)
-        //{
-        //    int res;
+        public static int ValidarOpcion(int min, int max, string mensaje)
+        {
+            int res;
 
-        //    do
-        //    {
+            Console.WriteLine(mensaje);
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out res))
+                {
+                    Console.WriteLine("Ingrese un número válido por favor.");
+                    res = -1;
+                }
+            } while (res < min || res > max);
 
-        //    } while ()
-        //}
+            return res;
+        }
     }
 }

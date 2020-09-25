@@ -17,6 +17,11 @@ namespace Expendedora
 
             Expendedora Exp = new Expendedora();
 
+            List<Lata> listaLatas = new List<Lata>();
+
+            Lata CO1 = new Lata("CO1", "Coca Cola", "Regular");
+
+
             //MENÚ
             do
             {
@@ -28,10 +33,10 @@ namespace Expendedora
                                   "\n   2 - INSERTAR BEBIDA" +
                                   "\n   3 - EXTRAER BEBIDA" +
                                   "\n   4 - BALANCE" +
-                                  "\n   5 - STOCK");
-                                
-                Console.WriteLine("\nINGRESE LA OPCIÓN QUE DESEE VER:");
-                opcion = int.Parse(Console.ReadLine());
+                                  "\n   5 - STOCK" +
+                                  "\n   6 - EXIT");
+
+                opcion = Validaciones.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
                 Console.Clear();
                 
                 switch (opcion)
@@ -55,38 +60,44 @@ namespace Expendedora
                     case 5:
                         //MostrarStock();
                         break;
-                    default:
-                        //Opción Inválida
+                    case 6:
+                        Exit();
                         break;
                 }
 
-            } while (opcion < 6);
+            } while (opcion <= 5);
             
 
         }
 
         //IngresarLata
-        public static void IngresarLata(Expendedora e)
+        public static void IngresarLata(Expendedora Exp)
         {
            
         }
 
         //ExtraerLata
-        public static void ExtraerLata(Expendedora e)
+        public static void ExtraerLata(Expendedora Exp)
         {
 
         }
 
         //ObtenerBalance
-        public static void ObtenerBalance(Expendedora e)
+        public static void ObtenerBalance(Expendedora Exp)
         {
 
         }
 
         //MostrarStock
-        public static void MostrarStock(Expendedora e)
+        public static void MostrarStock(Expendedora Exp)
         {
             
+        }
+
+        public static void Exit()
+        {
+            Console.WriteLine("MUCHAS GRACIAS POR HABER USADO LA EXPENDEDORA!\n\nIngrese una tecla y se cerrará el sistema.");
+            Console.ReadKey();
         }
         
     }

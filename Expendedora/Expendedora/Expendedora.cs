@@ -12,18 +12,29 @@ namespace Expendedora
         string _proveedor;
         int _capacidad;
         double _dinero;
-        bool _encendido;
+        bool _encendida;
 
         public Expendedora()
         {
-
+            this._latas = new List<Lata>();
+            _capacidad = 60;
+            
         }
 
-        //AgregarLata(Lata) : void
+        //public void AgregarLata(Lata l)
+        //{
+            
+        //}
 
-        //ExtraerLata(string, double): Lata
+        //public Lata ExtraerLata(string codigo, double dinero)
+        //{
+            
+        //}
 
-        //GetBalance() : string
+        //public string GetBalance()
+        //{
+        //    return 
+        //}
 
         //GetCapacidadRestante(): int
 
@@ -47,7 +58,15 @@ namespace Expendedora
 
         }
 
-        //EstaVacia(): bool 
+        public bool EstaVacia()
+        {
+            if (_capacidad == 0)
+            {
+                Console.WriteLine("La Máquina está vacía.");
+            }
+            return true;
+            
+        }
         
         
     }

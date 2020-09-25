@@ -14,14 +14,24 @@ namespace Expendedora
         double _precio;
         double _volumen;
 
-        public Lata()
+        public Lata(string codigo, string nombre, string sabor)
         {
-
+            this._codigo = codigo;
+            this._nombre = nombre;
+            this._sabor = sabor;
         }
 
-        //GetPrecioPorLitro(): double
+        public double GetPrecioPorLitro(double precio, double volumen)
+        {
+            //Ingresar Precio //Ingresar Volumen
+            double precioPorLitro = (precio / volumen);
+            return double.Parse(precioPorLitro + "$/L");
+        }
 
-        //ToString(): string
+        //public override string ToString()
+        //{
+        //    return string.Format("{0} - {1} $ {2} / $/L {3}", this._nombre, this._sabor, this._precio, this.GetPrecioPorLitro());
+        //}
 
 
     }
