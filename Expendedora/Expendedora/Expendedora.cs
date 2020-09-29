@@ -21,14 +21,14 @@ namespace Expendedora
             
         }
 
-        //public void AgregarLata(Lata l)
+        //public void AgregarLata(Lata lata)
         //{
             
         //}
 
         //public Lata ExtraerLata(string codigo, double dinero)
         //{
-            
+
         //}
 
         //public string GetBalance()

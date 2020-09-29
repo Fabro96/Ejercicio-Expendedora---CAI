@@ -20,6 +20,7 @@ namespace Expendedora
             List<Lata> listaLatas = new List<Lata>();
 
             Lata CO1 = new Lata("CO1", "Coca Cola", "Regular");
+            listaLatas.Add(CO1);
 
 
             //MENÚ
@@ -47,7 +48,12 @@ namespace Expendedora
                         break;
                     case 1:
                         //Mostrar Listado de Latas
-                        break;
+                        foreach (Lata lata in listaLatas)
+                        {
+                            Console.WriteLine(lata.ToString());
+                            Console.ReadKey();
+                        }
+                            break;
                     case 2:
                         //Método IngresarLata(Expendedora): void
                         break;
@@ -58,7 +64,8 @@ namespace Expendedora
                         //Método ObtenerBalance(Expendedora): void
                         break;
                     case 5:
-                        //MostrarStock();
+                        //MostrarStock(Exp);
+                        
                         break;
                     case 6:
                         Exit();
@@ -69,6 +76,8 @@ namespace Expendedora
             
 
         }
+
+        
 
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
@@ -91,7 +100,7 @@ namespace Expendedora
         //MostrarStock
         public static void MostrarStock(Expendedora Exp)
         {
-            
+            Exp.EstaVacia();
         }
 
         public static void Exit()
