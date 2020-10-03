@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Solucion.LibreriaConsola;
+using Solucion.LibreriaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expendedora
+namespace Solicion.Consola
 {
     class Program
     {
@@ -16,12 +18,6 @@ namespace Expendedora
             Console.ReadKey();
 
             Expendedora Exp = new Expendedora();
-
-            List<Lata> listaLatas = new List<Lata>();
-
-            Lata CO1 = new Lata("CO1", "Coca Cola", "Regular");
-            listaLatas.Add(CO1);
-
 
             //MENÚ
             do
@@ -37,7 +33,7 @@ namespace Expendedora
                                   "\n   5 - STOCK" +
                                   "\n   6 - EXIT");
 
-                opcion = Validaciones.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
+                opcion = ConsolaHelper.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
                 Console.Clear();
                 
                 switch (opcion)
@@ -48,24 +44,23 @@ namespace Expendedora
                         break;
                     case 1:
                         //Mostrar Listado de Latas
-                        foreach (Lata lata in listaLatas)
-                        {
-                            Console.WriteLine(lata.ToString());
-                            Console.ReadKey();
-                        }
-                            break;
+
+                         break;
                     case 2:
                         //Método IngresarLata(Expendedora): void
+                        Program.IngresarLata(Exp);
                         break;
                     case 3:
                         //Método ExtraerLata(Expendedora): void
+                        Program.ExtraerLata(Exp);
                         break;
                     case 4:
                         //Método ObtenerBalance(Expendedora): void
+                        Program.ObtenerBalance(Exp);
                         break;
                     case 5:
                         //MostrarStock(Exp);
-                        
+                        Program.MostrarStock(Exp);
                         break;
                     case 6:
                         Exit();
@@ -74,10 +69,7 @@ namespace Expendedora
 
             } while (opcion <= 5);
             
-
         }
-
-        
 
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
@@ -100,7 +92,7 @@ namespace Expendedora
         //MostrarStock
         public static void MostrarStock(Expendedora Exp)
         {
-            Exp.EstaVacia();
+            
         }
 
         public static void Exit()

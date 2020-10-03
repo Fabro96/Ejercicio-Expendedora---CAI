@@ -43,14 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expendedora.cs" />
-    <Compile Include="Lata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Solucion.LibreriaConsola\Solucion.LibreriaConsola.csproj">
+      <Project>{00f42213-3a59-4b24-b815-780a9c84761c}</Project>
+      <Name>Solucion.LibreriaConsola</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solucion.LibreriaNegocio\Solucion.LibreriaNegocio.csproj">
+      <Project>{9d933380-36bf-4778-bb3c-c3bd19b7daae}</Project>
+      <Name>Solucion.LibreriaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
