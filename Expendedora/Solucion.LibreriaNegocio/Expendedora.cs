@@ -43,7 +43,8 @@ namespace Solucion.LibreriaNegocio
         }
         public bool Encendida
         {
-            get { return _encendida; }
+            set { _encendida = value; }
+            get { return _encendida;  }
         }
 
         //MÉTODOS
@@ -51,25 +52,34 @@ namespace Solucion.LibreriaNegocio
         {
 
         }
-        public Lata ExtraerLata(string codigo, double dinero)
-        {
-            ;
-        }
-        public string GetBalance()
-        {
+        //public Lata ExtraerLata(string codigo, double dinero)
+        //{
 
-        }
-        public int GetCapacidadRestante()
-        {
+        //}
+        //public string GetBalance()
+        //{
             
-        }
+        //}
+        //public int GetCapacidadRestante()
+        //{
+           
+        //}
         public void EncenderMaquina()
         {
-
+            
+            if (_encendida == true)
+            {
+                Console.WriteLine("Máquina Encendida!");
+            }
+            else
+            {
+                Console.WriteLine("La máquina no está encendida aún.");
+            }
+            Console.ReadKey();
         }
-        public bool EstaVacia()
-        {
+        //public bool EstaVacia()
+        //{
 
-        }
+        //}
     }
 }

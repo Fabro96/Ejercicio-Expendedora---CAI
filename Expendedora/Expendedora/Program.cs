@@ -35,46 +35,76 @@ namespace Solicion.Consola
 
                 opcion = ConsolaHelper.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
                 Console.Clear();
-                
-                switch (opcion)
-                {
-                    case 0:
-                        //Encender Máquina
-                        Exp.EncenderMaquina();
-                        break;
-                    case 1:
-                        //Mostrar Listado de Latas
 
-                         break;
-                    case 2:
-                        //Método IngresarLata(Expendedora): void
-                        Program.IngresarLata(Exp);
-                        break;
-                    case 3:
-                        //Método ExtraerLata(Expendedora): void
-                        Program.ExtraerLata(Exp);
-                        break;
-                    case 4:
-                        //Método ObtenerBalance(Expendedora): void
-                        Program.ObtenerBalance(Exp);
-                        break;
-                    case 5:
-                        //MostrarStock(Exp);
-                        Program.MostrarStock(Exp);
-                        break;
-                    case 6:
-                        Exit();
-                        break;
+                try
+                {
+                    switch (opcion)
+                    {
+                        case 0:
+                            //Encender Máquina
+                            Exp.EncenderMaquina();
+                            break;
+                        case 1:
+                            //Mostrar Listado de Latas
+                            ConsolaHelper.ListarLatas();
+                            break;
+                        case 2:
+                            //Método IngresarLata(Expendedora): void
+                            Program.IngresarLata(Exp);
+                            break;
+                        case 3:
+                            //Método ExtraerLata(Expendedora): void
+                            Program.ExtraerLata(Exp);
+                            break;
+                        case 4:
+                            //Método ObtenerBalance(Expendedora): void
+                            Program.ObtenerBalance(Exp);
+                            break;
+                        case 5:
+                            //MostrarStock(Exp);
+                            Program.MostrarStock(Exp);
+                            break;
+                        case 6:
+                            Exit();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("\nLo sentimos, hubo un error en el sistema. " + ex.Message);
                 }
 
-            } while (opcion <= 5);
-            
+            } while (opcion <= 5) ;
         }
-
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
         {
-           
+            if (Exp.Encendida)
+            {
+                try
+                {
+                    //Se listan los códigos previamente establecidos
+                    ConsolaHelper.ListarCodigos();
+                    //Ingresar Código (tiene que ser válido)
+                    //Ingresar dinero
+                    //Ingresar volumen
+                    //Marca y sabor se ingresar automáticamente dependiendo del código que se ingresó
+                    //Sumar lata al listado
+
+
+
+                } catch (Exception ex)
+                {
+
+                }
+               
+            }
+            else
+            {
+                Console.WriteLine("La máquina no está encendida.\n\nVuelva al Menú Principal para encenderla.");
+                
+            }
+            Console.ReadKey();
         }
 
         //ExtraerLata
@@ -97,7 +127,7 @@ namespace Solicion.Consola
 
         public static void Exit()
         {
-            Console.WriteLine("MUCHAS GRACIAS POR HABER USADO LA EXPENDEDORA!\n\nIngrese una tecla y se cerrará el sistema.");
+            Console.WriteLine("MUCHAS GRACIAS POR HABER USADO LA EXPENDEDORA!\n\nIngrese una tecla y se apagará la máquina.");
             Console.ReadKey();
         }
         
