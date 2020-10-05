@@ -24,6 +24,13 @@ namespace Solucion.LibreriaNegocio
             this._precio = precio;
             this._volumen = volumen;
         }
+        public Lata(string codigo, string nombre, string sabor)
+        {
+            this._codigo = codigo;
+            this._nombre = nombre;
+            this._sabor = sabor;
+            
+        }
 
         //PROPIEDADES
         public string Codigo

@@ -48,8 +48,35 @@ namespace Solucion.LibreriaNegocio
         }
 
         //MÉTODOS
-        public void AgregarLata(Lata lata)
+        public void AgregarLata(string codigo)
         {
+            Lata lata;
+
+            switch (codigo.ToUpper())
+            {
+                case "CO1":
+                    lata = new Lata(codigo, "Coca Cola", "Regular");
+                    break;
+                case "CO2":
+                    lata = new Lata(codigo, "Coca Cola", "Zero");
+                    break;
+                case "SP1":
+                    lata = new Lata(codigo, "Sprite", "Regular");
+                    break;
+                case "SP2":
+                    lata = new Lata(codigo, "Sprite", "Zero");
+                    break;
+                case "FA1":
+                    lata = new Lata(codigo, "Fanta", "Regular");
+                    break;
+                case "FA2":
+                    lata = new Lata(codigo, "Coca Cola", "Zero");
+                    break;
+                default:
+                    throw new Exception("Código inválido.");
+            }
+            this._latas.Add(lata);
+            Console.ReadKey();
 
         }
         //public Lata ExtraerLata(string codigo, double dinero)
@@ -66,16 +93,10 @@ namespace Solucion.LibreriaNegocio
         //}
         public void EncenderMaquina()
         {
-            
-            if (_encendida == true)
-            {
-                Console.WriteLine("Máquina Encendida!");
-            }
-            else
-            {
-                Console.WriteLine("La máquina no está encendida aún.");
-            }
+            _encendida = true;
+            Console.WriteLine("Máquina Encendida!");
             Console.ReadKey();
+            
         }
         //public bool EstaVacia()
         //{

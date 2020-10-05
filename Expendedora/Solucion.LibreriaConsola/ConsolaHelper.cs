@@ -40,6 +40,7 @@ namespace Solucion.LibreriaConsola
         }
         public static void ListarLatas()
         {
+            Console.WriteLine("LATAS DISPONIBLES\n");
             Console.WriteLine("CO1 - Coca Cola Regular\n" +
                               "CO2 - Coca Cola Zero\n" +
                               "SP1 - Sprite Regular\n" +
@@ -58,19 +59,21 @@ namespace Solucion.LibreriaConsola
                               "FA2");
             Console.ReadKey();
         }
-        public static string IngresarCodigo(string codigo)
+        public static string PedirString(string msj)
         {
-            Console.WriteLine("\nIngrese el CÓDIGO de la lata que desea ingresar: ");
-            
-            switch (codigo)
-            {
-                case "CO1":
-                    break;
-                //Continuar
-            }
-            return codigo;
+            Console.WriteLine("\nIngrese " + msj);
+            string s = Console.ReadLine();
+            return s;
+        }
+        public static double PedirDouble(string msj)
+        {
+            Console.WriteLine("\nIngrese " + msj);
+            double c = double.Parse(Console.ReadLine());
+
+
+            return c;
         }
 
-        
+
     }
 }

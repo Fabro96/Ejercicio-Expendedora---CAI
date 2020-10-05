@@ -79,23 +79,27 @@ namespace Solicion.Consola
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
         {
-            if (Exp.Encendida)
+            if (Exp.Encendida == true)
             {
                 try
                 {
                     //Se listan los códigos previamente establecidos
                     ConsolaHelper.ListarCodigos();
                     //Ingresar Código (tiene que ser válido)
+                    string codigo = ConsolaHelper.PedirString("Código");
                     //Ingresar dinero
+                    double dinero = ConsolaHelper.PedirDouble("Dinero");
                     //Ingresar volumen
-                    //Marca y sabor se ingresar automáticamente dependiendo del código que se ingresó
+                    double volumen = ConsolaHelper.PedirDouble("Volumen");
+                    //Marca y sabor se ingresan automáticamente dependiendo del código que se ingresó
                     //Sumar lata al listado
-
-
+                    Exp.AgregarLata(codigo);
+                    Console.WriteLine("\nLata ingresada en la expendedora.");
+                    Console.ReadKey();
 
                 } catch (Exception ex)
                 {
-
+                    Console.WriteLine("Error en uno de los datos ingresados. " + ex.Message + " Intente nuevamente. \n\n");
                 }
                
             }
@@ -122,7 +126,19 @@ namespace Solicion.Consola
         //MostrarStock
         public static void MostrarStock(Expendedora Exp)
         {
-            
+            if (Exp.Encendida == true)
+            {
+                foreach (Lata lata in Exp.Latas)
+                {
+                    Console.WriteLine(lata.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("La máquina no está encendida. Vuelve al Manú Principal para encenderla.");
+            }
+
+            Console.ReadKey();
         }
 
         public static void Exit()
