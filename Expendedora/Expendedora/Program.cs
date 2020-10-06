@@ -74,7 +74,7 @@ namespace Solicion.Consola
                     Console.WriteLine("\nLo sentimos, hubo un error en el sistema. " + ex.Message);
                 }
 
-            } while (opcion <= 5) ;
+            } while (opcion < 6) ;
         }
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
@@ -86,20 +86,20 @@ namespace Solicion.Consola
                     //Se listan los códigos previamente establecidos
                     ConsolaHelper.ListarCodigos();
                     //Ingresar Código (tiene que ser válido)
-                    string codigo = ConsolaHelper.PedirString("Código");
+                    string codigo = ConsolaHelper.PedirString("Código de la Lata");
                     //Ingresar dinero
-                    double dinero = ConsolaHelper.PedirDouble("Dinero");
+                    double precio = ConsolaHelper.PedirDouble("Precio de la Lata", 0, 100, "\nEl precio debe ser mayor a cero y no debe superar los 100.");
                     //Ingresar volumen
-                    double volumen = ConsolaHelper.PedirDouble("Volumen");
-                    //Marca y sabor se ingresan automáticamente dependiendo del código que se ingresó
+                    double volumen = ConsolaHelper.PedirDouble("Volumen de la Lata", 0, 1, "El Volumen Máx de lata es 1 L");
+                    //Marca y sabor se ingresan automáticamente dependiendo del código que se ingresó.
                     //Sumar lata al listado
-                    Exp.AgregarLata(codigo);
-                    Console.WriteLine("\nLata ingresada en la expendedora.");
+                    Exp.AgregarLata(codigo, precio, volumen);
+                    Console.WriteLine("\nLata ingresada en la expendedora! Ingrese una tecla para volver al Menú Principal.");
                     Console.ReadKey();
 
                 } catch (Exception ex)
                 {
-                    Console.WriteLine("Error en uno de los datos ingresados. " + ex.Message + " Intente nuevamente. \n\n");
+                    Console.WriteLine("Hubo un error en uno de los datos ingresados. " + ex.Message + " Intente nuevamente. \n\n");
                 }
                
             }

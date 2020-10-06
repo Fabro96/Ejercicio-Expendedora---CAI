@@ -31,6 +31,13 @@ namespace Solucion.LibreriaNegocio
             this._sabor = sabor;
             
         }
+        public Lata(string codigo, double precio, double volumen)
+        {
+            this._codigo = codigo;
+            this._precio = precio;
+            this._volumen = volumen;
+
+        }
 
         //PROPIEDADES
         public string Codigo
@@ -62,8 +69,8 @@ namespace Solucion.LibreriaNegocio
         //MÉTODOS
         private double GetPrecioPorLitro()
         {
-           
-            return 50.5;
+
+            return this.Precio / this.Volumen;
         }
 
         public override string ToString()

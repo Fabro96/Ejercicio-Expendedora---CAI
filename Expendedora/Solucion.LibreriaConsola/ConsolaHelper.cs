@@ -51,13 +51,14 @@ namespace Solucion.LibreriaConsola
         }
         public static void ListarCodigos()
         {
+            Console.WriteLine("CÓDIGOS\n");
             Console.WriteLine("CO1\n" +
                               "CO2\n" +
                               "SP1\n" +
                               "SP2\n" +
                               "FA1\n" +
                               "FA2");
-            Console.ReadKey();
+            
         }
         public static string PedirString(string msj)
         {
@@ -65,13 +66,20 @@ namespace Solucion.LibreriaConsola
             string s = Console.ReadLine();
             return s;
         }
-        public static double PedirDouble(string msj)
+        public static double PedirDouble(string msj, int min, int max, string aviso)
         {
+            double res;
             Console.WriteLine("\nIngrese " + msj);
-            double c = double.Parse(Console.ReadLine());
+            do
+            {
+                if (!double.TryParse(Console.ReadLine(), out res))
+                {
+                    Console.WriteLine(aviso);
+                    res = -1;
+                }
+            } while (res < min || res > max);
 
-
-            return c;
+            return res;
         }
 
 

@@ -48,9 +48,9 @@ namespace Solucion.LibreriaNegocio
         }
 
         //MÉTODOS
-        public void AgregarLata(string codigo)
+        public void AgregarLata(string codigo, double precio, double volumen)
         {
-            Lata lata;
+            Lata lata = new Lata(codigo, precio, volumen);
 
             switch (codigo.ToUpper())
             {
@@ -76,7 +76,10 @@ namespace Solucion.LibreriaNegocio
                     throw new Exception("Código inválido.");
             }
             this._latas.Add(lata);
-            Console.ReadKey();
+            lata.Precio = precio;
+            lata.Volumen = volumen;
+
+            
 
         }
         //public Lata ExtraerLata(string codigo, double dinero)
