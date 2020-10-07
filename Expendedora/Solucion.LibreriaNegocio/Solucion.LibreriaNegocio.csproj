@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapacidadInsuficienteException.cs" />
+    <Compile Include="CodigoInvalidoException.cs" />
     <Compile Include="Expendedora.cs" />
     <Compile Include="Lata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinStockException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

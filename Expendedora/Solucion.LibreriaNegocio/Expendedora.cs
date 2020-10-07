@@ -20,6 +20,8 @@ namespace Solucion.LibreriaNegocio
         public Expendedora()
         {
             this._latas = new List<Lata>();
+            this._capacidad = 60;
+            
         }
 
         //PROPIEDADES
@@ -50,60 +52,109 @@ namespace Solucion.LibreriaNegocio
         //MÉTODOS
         public void AgregarLata(string codigo, double precio, double volumen)
         {
-            Lata lata = new Lata(codigo, precio, volumen);
-
-            switch (codigo.ToUpper())
-            {
-                case "CO1":
-                    lata = new Lata(codigo, "Coca Cola", "Regular");
-                    break;
-                case "CO2":
-                    lata = new Lata(codigo, "Coca Cola", "Zero");
-                    break;
-                case "SP1":
-                    lata = new Lata(codigo, "Sprite", "Regular");
-                    break;
-                case "SP2":
-                    lata = new Lata(codigo, "Sprite", "Zero");
-                    break;
-                case "FA1":
-                    lata = new Lata(codigo, "Fanta", "Regular");
-                    break;
-                case "FA2":
-                    lata = new Lata(codigo, "Coca Cola", "Zero");
-                    break;
-                default:
-                    throw new Exception("Código inválido.");
-            }
-            this._latas.Add(lata);
-            lata.Precio = precio;
-            lata.Volumen = volumen;
-
             
+            if (GetCapacidadRestante() == 0)
+            {
+                throw new CapacidadInsuficienteException("\nLa Expendedora no tiene capacidad suficiente para ingresar otra lata.");
+            }
+            else
+            {
+                Lata lata = new Lata(codigo, precio, volumen);
+
+                switch (codigo.ToUpper())
+                {
+                    case "CO1":
+                        lata = new Lata(codigo, "Coca Cola", "Regular");
+                        break;
+                    case "CO2":
+                        lata = new Lata(codigo, "Coca Cola", "Zero");
+                        break;
+                    case "SP1":
+                        lata = new Lata(codigo, "Sprite", "Regular");
+                        break;
+                    case "SP2":
+                        lata = new Lata(codigo, "Sprite", "Zero");
+                        break;
+                    case "FA1":
+                        lata = new Lata(codigo, "Fanta", "Regular");
+                        break;
+                    case "FA2":
+                        lata = new Lata(codigo, "Coca Cola", "Zero");
+                        break;
+                    default:
+                        throw new CodigoInvalidoException("\nCódigo inválido. Intentelo nuevamente.");
+                }
+                this._latas.Add(lata);
+                this._capacidad = _capacidad - 1;
+                lata.Precio = precio;
+                lata.Volumen = volumen;
+            }
 
         }
-        //public Lata ExtraerLata(string codigo, double dinero)
+        public Lata ExtraerLata(string codigo, double dinero)
+        {
+            if (this.EstaVacia() == true)
+            {
+                throw new SinStockException("La Expendedora está sin stock en estos mommentos.");
+            }
+            else
+            {
+                Lata lata;
+
+                switch (codigo.ToUpper())
+                {
+                     
+                    case "CO1":
+                        lata = new Lata(codigo, "Coca Cola", "Regular");
+                        break;
+                    case "CO2":
+                        lata = new Lata(codigo, "Coca Cola", "Zero");
+                        break;
+                    case "SP1":
+                        lata = new Lata(codigo, "Sprite", "Regular");
+                        break;
+                    case "SP2":
+                        lata = new Lata(codigo, "Sprite", "Zero");
+                        break;
+                    case "FA1":
+                        lata = new Lata(codigo, "Fanta", "Regular");
+                        break;
+                    case "FA2":
+                        lata = new Lata(codigo, "Coca Cola", "Zero");
+                        break;
+                    default:
+                        throw new CodigoInvalidoException("\nCódigo inválido. Intentelo nuevamente.");
+                }
+            }
+            return ;
+        }
+        //public string GetBalance()
         //{
 
         //}
-        //public string GetBalance()
-        //{
-            
-        //}
-        //public int GetCapacidadRestante()
-        //{
-           
-        //}
+        public int GetCapacidadRestante()
+        {
+            return 60 - this._capacidad;
+        }
         public void EncenderMaquina()
         {
             _encendida = true;
             Console.WriteLine("Máquina Encendida!");
+            Console.WriteLine("\nIngrese una tecla para volver al Menú Pricipal.");
             Console.ReadKey();
             
         }
-        //public bool EstaVacia()
-        //{
-
-        //}
+        public bool EstaVacia()
+        {
+            if (this._capacidad == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                
+        }
     }
 }

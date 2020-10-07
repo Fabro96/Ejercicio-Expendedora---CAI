@@ -47,6 +47,7 @@ namespace Solucion.LibreriaConsola
                               "SP2 - Sprite Zero\n" +
                               "FA1 - Fanta Regular\n" +
                               "FA2 - Fanta Zero");
+            Console.WriteLine("\nIngrese una tecla para volver al Menú Pricipal.");
             Console.ReadKey();
         }
         public static void ListarCodigos()
