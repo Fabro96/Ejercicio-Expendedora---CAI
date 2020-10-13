@@ -93,12 +93,7 @@ namespace Solucion.LibreriaNegocio
         }
         public Lata ExtraerLata(string codigo, double dinero)
         {
-            if (this.EstaVacia() == true)
-            {
-                throw new SinStockException("La Expendedora está sin stock en estos mommentos.");
-            }
-            else
-            {
+            
                 Lata lata;
 
                 switch (codigo.ToUpper())
@@ -125,13 +120,13 @@ namespace Solucion.LibreriaNegocio
                     default:
                         throw new CodigoInvalidoException("\nCódigo inválido. Intentelo nuevamente.");
                 }
-            }
-            return ;
+            
+            return lata;
         }
-        //public string GetBalance()
-        //{
-
-        //}
+        public string GetBalance()
+        {
+            throw new NotImplementedException();
+        }
         public int GetCapacidadRestante()
         {
             return 60 - this._capacidad;

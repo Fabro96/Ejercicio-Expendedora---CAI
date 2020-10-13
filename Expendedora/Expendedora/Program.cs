@@ -13,7 +13,7 @@ namespace Solicion.Consola
     {
         static void Main(string[] args)
         {
-            int opcion;
+            
             //INGRESO
             Console.WriteLine("BIENVENIDO A LA EXPENDEDORA!\n\nIngrese cualquier teclara ir al MENÚ DEL USUARIO.");
             Console.ReadKey();
@@ -21,6 +21,7 @@ namespace Solicion.Consola
             Expendedora Exp = new Expendedora();
 
             //MENÚ
+            bool continuarActivo = true;
             do
             {
                 Console.Clear();
@@ -34,11 +35,12 @@ namespace Solicion.Consola
                                   "\n   5 - STOCK" +
                                   "\n   6 - EXIT");
 
-                opcion = ConsolaHelper.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
-                Console.Clear();
 
                 try
                 {
+                    int opcion = ConsolaHelper.ValidarOpcion(0, 6, "\nINGRESE LA OPCIÓN QUE DESEE VER:");
+                    Console.Clear();
+
                     switch (opcion)
                     {
                         case 0:
@@ -67,6 +69,7 @@ namespace Solicion.Consola
                             break;
                         case 6:
                             Exit();
+                            continuarActivo = false;
                             break;
                     }
                 }
@@ -75,7 +78,7 @@ namespace Solicion.Consola
                     Console.WriteLine("\nLo sentimos, hubo un error en el sistema. " + ex.Message);
                 }
 
-            } while (opcion < 6) ;
+            } while (continuarActivo is true) ;
         }
         //IngresarLata
         public static void IngresarLata(Expendedora Exp)
